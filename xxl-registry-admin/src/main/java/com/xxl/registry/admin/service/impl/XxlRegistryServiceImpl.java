@@ -79,6 +79,7 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
     /**
      * send RegistryData Update Message
      */
+    // 将更新信息保存到xxlRegistryMessage表，然后集群的每个实例，自己后台线程做同步
     private void sendRegistryDataUpdateMessage(XxlRegistry xxlRegistry){
         String registryUpdateJson = JacksonUtil.writeValueAsString(xxlRegistry);
 
@@ -404,8 +405,10 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
                             if (xxlRegistryData !=null) {
 
                                 // refresh or add
+                                // 更新xxlRegistryData的更新时间
                                 int ret = xxlRegistryDataDao.refresh(xxlRegistryData);
                                 if (ret == 0) {
+                                    // 如果库中没有对应记录，就将值入库
                                     xxlRegistryDataDao.add(xxlRegistryData);
                                 }
 
