@@ -667,7 +667,7 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
         return fileName;
     }
 
-    // set
+    // set 本地磁盘数据存储用的文件格式是properties。也可以做到高性能
     public String setFileRegistryData(XxlRegistry xxlRegistry){
 
         // fileName
