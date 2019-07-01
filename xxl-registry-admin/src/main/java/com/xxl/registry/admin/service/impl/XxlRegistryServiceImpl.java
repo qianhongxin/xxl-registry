@@ -374,7 +374,7 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
 
     }
 
-    // ------------------------ broadcase + file data ------------------------
+    // ------------------------ broadcast + file data ------------------------
 
     private ExecutorService executorService = Executors.newCachedThreadPool();
     private volatile boolean executorStoped = false;
