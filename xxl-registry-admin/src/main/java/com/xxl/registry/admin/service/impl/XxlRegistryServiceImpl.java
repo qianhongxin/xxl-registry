@@ -373,7 +373,7 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
 
     }
 
-    // ------------------------ broadcase + file data ------------------------
+    // ------------------------ broadcast + file data ------------------------
 
     private ExecutorService executorService = Executors.newCachedThreadPool();
     private volatile boolean executorStoped = false;
@@ -475,7 +475,7 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
         }
 
         /**
-         * broadcase new one registry-data-file     (1/1s)
+         * broadcast new one registry-data-file     (1/1s)
          *
          * clean old message   (1/10s)
          */
@@ -690,7 +690,7 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
                 , xxlRegistry.getBiz(), xxlRegistry.getEnv(), xxlRegistry.getKey(), xxlRegistry.getData());
 
 
-        // brocast monitor client
+        // broadcast monitor client
         List<DeferredResult> deferredResultList = registryDeferredResultMap.get(fileName);
         if (deferredResultList != null) {
             registryDeferredResultMap.remove(fileName);
