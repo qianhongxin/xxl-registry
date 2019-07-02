@@ -11,7 +11,7 @@ public class XxlRegistry {
     private String biz;         // 业务标识
     private String env;         // 环境标识
     private String key;         // 注册Key
-    private String data;        // 注册Value有效数据
+    private String data;        // 注册Value有效数据，是XxlRegistryData的data数据的整合。即一个XxlRegistry对应多个XxlRegistryData
     private int status;         // 状态：0-正常、1-锁定、2-禁用
 
     // plugin
