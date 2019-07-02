@@ -330,6 +330,7 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
 
     /**
      * update Registry And Message
+     * 新增或更新XxlRegistry，并发送更新消息到数据库，其他节点同步数据库数据到磁盘文件
      */
     private void checkRegistryDataAndSendMessage(XxlRegistryData xxlRegistryData){
         // data json
@@ -419,7 +420,9 @@ public class XxlRegistryServiceImpl implements IXxlRegistryService, Initializing
                                 } else if (fileXxlRegistry.getStatus() != 0) {
                                     continue;     // "Status limited."
                                 } else {
+                                    // 字符串匹配
                                     if (fileXxlRegistry.getDataList().contains(xxlRegistryData.getValue())) {
+                                        // 包含的话，直接下一次循环
                                         continue;     // "Repeated limited."
                                     }
                                 }
