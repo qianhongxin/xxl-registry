@@ -27,7 +27,7 @@ public class BasicHttpUtil {
         HttpURLConnection connection = null;
         BufferedReader bufferedReader = null;
         try {
-            // connection
+            // connection， jdk提供的http工具
             URL realUrl = new URL(url);
             connection = (HttpURLConnection) realUrl.openConnection();
 
